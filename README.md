@@ -1,288 +1,236 @@
-##🛍️ Consumer Retail Analysis – Customer Behavior & Sales Insights
-
-_Analyzing customer shopping behavior and retail trends to drive strategic business decisions using Python, SQL, and Power BI._
-
+🛍️ Customer Analytics Dashboard – Retail Customer Behavior & Sales Insights
+Analyzing customer shopping behavior, sales performance, subscriptions, and customer preferences using Python, SQL, and Power BI.
 ---
-
-![Python](https://img.shields.io/badge/Python-3.11-blue)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-blue)
-![PowerBI](https://img.shields.io/badge/PowerBI-Dashboard-yellow)
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![SQL](https://img.shields.io/badge/SQL-Analysis-blue)
+![PowerBI](https://img.shields.io/badge/Power%20BI-Dashboard-yellow)
 ![Status](https://img.shields.io/badge/Project-Completed-brightgreen)
-
 ---
-
-## 📌 Table of Contents
-
-| Section | Link |
-|---|---|
-| Overview | [Go to Overview](#overview) |
-| Business Problem | [Go to Business Problem](#business-problem) |
-| Dataset | [Go to Dataset](#dataset) |
-| Tools & Technologies | [Go to Tools & Technologies](#tools--technologies) |
-| Project Structure | [Go to Project Structure](#project-structure) |
-| Data Cleaning & Preparation | [Go to Data Cleaning & Preparation](#data-cleaning--preparation) |
-| Exploratory Data Analysis | [Go to EDA](#exploratory-data-analysis-eda) |
-| Research Questions & Key Findings | [Go to Findings](#research-questions--key-findings) |
-| Dashboard | [Go to Dashboard](#dashboard) |
-| How to Run This Project | [Go to Setup Guide](#how-to-run-this-project) |
-| Final Recommendations | [Go to Recommendations](#final-recommendations) |
-| Author & Contact | [Go to Contact](#author--contact) |
+📌 Table of Contents
+Section	Link
+Overview	Go to Overview
+Business Problem	Go to Business Problem
+Dataset	Go to Dataset
+Tools & Technologies	Go to Tools & Technologies
+Project Structure	Go to Project Structure
+Data Preparation	Go to Data Preparation
+Dashboard	Go to Dashboard
+Key Findings	Go to Key Findings
+How to Run	Go to How to Run
+Recommendations	Go to Recommendations
 ---
-
-
-## 🔗 Quick Project Access
-
-| Resource | Open |
-|---|---|
-| 📊 Power BI Dashboard | [Open Dashboard](Consumer%20Retail%20Analysis%20Dashboard.pbix) |
-| 📓 Jupyter Notebook | [Open Notebook](Consumer%20Retail%20Analysis%20notebook.ipynb) |
-| 📘 Project Report | [Open Report](Consumer%20Retail%20Analysis%20Project%20Report.pdf) |
-
+🔗 Quick Project Access
+Resource	Open
+📊 Power BI Dashboard	`powerbi/Customer_Analytics_Dashboard.pbix`
+📓 Python Notebook	`python/Customer_Analytics_Analysis.ipynb`
+📘 Project Report	`documentation/Project_Report.pdf`
+📄 Business Problem	`documentation/Business_Problem_Statement.pdf`
+🖼️ Dashboard Image	`dashboard/Customer_Analytics_Dashboard.png`
 ---
-
-## Overview
-
-This project analyzes customer shopping behavior using transactional retail data from **3,900 purchases** across multiple product categories. The goal is to uncover actionable insights into spending patterns, customer segmentation, product preferences, seasonal trends, and subscription behavior — all to support smarter, data-driven retail decisions.
-
-A complete data pipeline was built using **Python** for data cleaning and EDA, **PostgreSQL** for structured SQL analysis, and **Power BI** for interactive dashboard visualization.
-
+Overview
+This project analyzes customer shopping behavior using a retail dataset containing 3,900 customer purchase records.
+The main goal is to understand how customers purchase products and identify useful patterns across:
+Customer demographics
+Product categories
+Subscription status
+Seasonal sales
+Payment methods
+Shipping preferences
+Customer ratings
+The analysis was carried out using Python and SQL, and the final results were presented through an interactive Power BI dashboard.
 ---
-
-## Business Problem
-
-Understanding what drives customer spending is critical for any retail business. This project aims to:
-
-- Identify high-value customer segments and their purchasing patterns
-- Understand the impact of discounts and promo codes on revenue
-- Analyze product category performance across demographics and seasons
-- Investigate the gap between loyal buyers and subscription conversion
-- Support strategic marketing, pricing, and inventory decisions
-
+Business Problem
+Retail businesses need to understand customer behavior to make better decisions around products, marketing, subscriptions, and customer service.
+This project focuses on questions such as:
+What is the overall customer base and average purchase value?
+How many customers are subscribed?
+Which product categories generate the most revenue?
+Which season performs best?
+How do sales differ by gender?
+Which payment methods are commonly used?
+Which shipping options do customers prefer?
+What is the overall customer review rating?
 ---
-
-## Dataset
-
-| Attribute | Details |
-|---|---|
-| Total Rows | 3,900 |
-| Total Columns | 18 |
-| Missing Values | 37 values in `Review Rating` column |
-| Average Purchase Amount | $59.76 |
-| Average Review Rating | 3.75 / 5.00 |
-
-**Key Features:**
-- **Customer Demographics** – Age, Gender, Location, Subscription Status
-- **Purchase Details** – Item Purchased, Category, Purchase Amount, Season, Size, Color
-- **Shopping Behavior** – Discount Applied, Promo Code Used, Previous Purchases, Frequency of Purchases, Review Rating, Shipping Type
-
+Dataset
+Attribute	Details
+Total Records	3,900
+Total Columns	18
+Average Purchase Amount	$59.76
+Average Review Rating	3.75 / 5.00
+Main Data Type	Customer shopping transactions
+Main Features
+Customer ID
+Age
+Gender
+Location
+Subscription Status
+Item Purchased
+Category
+Purchase Amount (USD)
+Season
+Size
+Color
+Previous Purchases
+Payment Method
+Frequency of Purchases
+Review Rating
+Shipping Type
 ---
-
-## Tools & Technologies
-
-| Tool / Technology | Purpose |
-|---|---|
-| Python (Pandas, NumPy) | Data loading, cleaning, feature engineering |
-| PostgreSQL | Database storage and SQL-based analysis |
-| SQLAlchemy | Python-to-PostgreSQL integration |
-| Power BI | Interactive dashboard and report visualization |
-| Microsoft Excel | Additional dashboard development and KPI cards |
-| pgAdmin / psql | SQL query execution and database management |
-
+Tools & Technologies
+Tool / Technology	Purpose
+Python	Data cleaning and exploratory analysis
+Pandas	Data manipulation and preparation
+NumPy	Numerical operations
+SQL	Business-oriented data analysis
+PostgreSQL	Database analysis
+Power BI	Dashboard and visualization
+GitHub	Version control and project documentation
 ---
-
-## Project Structure
-
-```
-consumer-retail-analysis/
+Project Structure
+```text
+customer-analytics-dashboard/
 │
 ├── README.md
-├── Business Problem Document.pdf          # Problem statement and objectives
-├── Consumer Retail Analysis Project Report.pdf  # Full project report
 │
-├── Consumer Retail Analysis notebook.ipynb     # EDA + SQL analysis notebook
+├── data/
+│   └── customer_shopping_behavior.csv
 │
-├── Consumer_Retail_Analysis.xlsx              # Raw dataset (Excel)
+├── python/
+│   └── Customer_Analytics_Analysis.ipynb
 │
-├── data/                                      # Supporting data files
-│   └── (CSV files used for analysis)
+├── sql/
+│   └── Customer_Analytics_Queries.sql
 │
-└── images/                                    # Dashboard screenshots
-    └── Consumer Retail Analysis Dashboard.png
+├── powerbi/
+│   └── Customer_Analytics_Dashboard.pbix
+│
+├── documentation/
+│   ├── Business_Problem_Statement.pdf
+│   └── Project_Report.pdf
+│
+└── dashboard/
+    └── Customer_Analytics_Dashboard.png
 ```
-
-> **Note:** The Power BI dashboard file (`Consumer Retail Analysis Dashboard.pbix`) is included for interactive exploration of all visualizations.
-
 ---
-
-## Data Cleaning & Preparation
-
-- **Missing Values**: Imputed missing `Review Rating` values using the median rating per product category
-- **Column Standardization**: Renamed all columns to `snake_case` for consistency and readability
-- **Feature Engineering**:
-  - Created `age_group` column by binning customer ages (Young Adult, Adult, Middle-aged, Senior)
-  - Created `purchase_frequency_days` column derived from purchase history
-- **Redundancy Check**: Verified that `discount_applied` and `promo_code_used` were redundant; dropped `promo_code_used`
-- **Database Integration**: Loaded the cleaned DataFrame into PostgreSQL via SQLAlchemy for SQL-based analysis
-
+Data Preparation
+The data preparation process included:
+Checking the dataset structure and data types
+Checking for missing values
+Standardizing column names
+Handling missing `Review Rating` values
+Creating useful derived fields for analysis
+Checking duplicate or redundant information
+Preparing the cleaned dataset for SQL and Power BI
+The cleaned data was then used for further analysis and dashboard development.
 ---
-
-## Exploratory Data Analysis (EDA)
-
-**Summary Statistics:**
-- Purchase Amount Range: $20 – $100 (Mean: $59.76)
-- Age Range: 18 – 70 years (Mean: 44 years)
-- Review Rating Range: 2.5 – 5.0 (Mean: 3.75)
-
-**Key Observations:**
-- Most frequent category: **Clothing** (Blouse was the most purchased item)
-- Most common location: **Montana**
-- Payment methods were nearly evenly distributed across PayPal, Credit Card, Cash, Debit Card, Venmo, and Bank Transfer
-- **73% of customers are non-subscribers**, presenting a major conversion opportunity
-
+Dashboard
+The Power BI dashboard brings the main findings together in one view.
+📊 Dashboard Preview
+![Customer Analytics Dashboard](dashboard/Customer_Analytics_Dashboard.png)
+Dashboard KPIs
+KPI	Value
+Number of Customers	3.9K
+Average Purchase Amount	$59.76
+Average Review Rating	3.75
+Dashboard Visuals
+Subscription Status – Shows subscribed and non-subscribed customers
+Revenue by Season – Compares revenue across Fall, Spring, Winter, and Summer
+Revenue by Category – Compares Clothing, Accessories, Footwear, and Outerwear
+Sales by Gender – Compares sales between male and female customers
+Payment Method Split – Shows the distribution of customer payment methods
+Shipping Type Preference – Shows customer preferences across shipping options
 ---
-
-## Research Questions & Key Findings
-
-1. **Revenue by Gender** – Male customers contributed ~$157,890 vs. ~$75,191 from female customers — a **2.1× difference**
-
-2. **High-Spending Discount Users** – **839 customers** used discounts but still spent above the average purchase amount
-
-3. **Top 5 Products by Rating**:
-   | Item | Avg. Rating |
-   |---|---|
-   | Gloves | 3.86 |
-   | Sandals | 3.84 |
-   | Boots | 3.82 |
-   | Hat | 3.80 |
-   | Skirt | 3.78 |
-
-4. **Shipping Type Comparison** – Express shipping users averaged **$60.48** vs. Standard at **$58.46**
-
-5. **Subscribers vs. Non-Subscribers** – Subscribers (1,053) averaged $59.49/transaction; Non-subscribers (2,847) averaged $59.87 with significantly higher total revenue ($170,436)
-
-6. **Discount-Dependent Products**:
-   | Item | Discount Rate |
-   |---|---|
-   | Hat | 50.00% |
-   | Sneakers | 49.66% |
-   | Coat | 49.07% |
-   | Sweater | 48.17% |
-   | Pants | 47.37% |
-
-7. **Customer Segmentation**:
-   | Segment | Customers |
-   |---|---|
-   | Loyal (>10 purchases) | 3,116 |
-   | Returning (2–10 purchases) | 701 |
-   | New (1 purchase) | 83 |
-
-8. **Top 3 Products Per Category** – Clothing: Blouse, Pants, Shirt | Accessories: Jewelry, Sunglasses, Belt | Footwear: Sandals, Shoes, Sneakers | Outerwear: Jacket, Coat
-
-9. **Repeat Buyers & Subscriptions** – 2,518 repeat buyers (>5 purchases) have **no subscription**, revealing a large untapped loyalty-to-subscription conversion gap
-
-10. **Revenue by Age Group**:
-    | Age Group | Total Revenue |
-    |---|---|
-    | Young Adult | $62,143 |
-    | Middle-aged | $59,197 |
-    | Adult | $55,978 |
-    | Senior | $55,763 |
-
+Key Findings
+1. Subscription Status
+The dashboard shows approximately 27% of customers as subscribers and 73% as non-subscribers.
+This indicates that subscription conversion is an important area for further customer engagement.
+2. Revenue by Season
+The dashboard shows:
+Season	Revenue
+Fall	60K
+Spring	59K
+Winter	59K
+Summer	56K
+Fall is the strongest season in the dashboard, while Summer has the lowest displayed revenue.
+3. Revenue by Category
+Category	Revenue
+Clothing	104K
+Accessories	74K
+Footwear	36K
+Outerwear	19K
+Clothing is the strongest revenue-generating category in the dashboard.
+4. Sales by Gender
+The dashboard shows approximately:
+Male: 158K
+Female: 75K
+This shows a significant difference in sales contribution between the two groups.
+5. Payment Methods
+The dashboard shows a relatively balanced distribution across the available payment methods, indicating that customers use multiple payment options rather than relying on one method.
+6. Shipping Preferences
+The dashboard compares:
+Free Shipping
+Express
+Store Pickup
+Standard
+2-Day Shipping
+Next Day Air
+The displayed values are relatively close, suggesting that no single shipping option completely dominates customer preference.
 ---
-
-## 📊 Dashboard
-
-The Power BI dashboard provides a complete visual analysis of customer behavior, category performance, subscription trends, payment preferences, and seasonal sales insights.
-
-### ✨ Dashboard Features
-- KPI Cards for Total Customers, Average Purchase Amount & Review Rating
-- Subscription Analysis
-- Revenue & Sales Trends
-- Age Group Insights
-- Payment Method Distribution
-- Shipping Preference Analysis
-- Seasonal Revenue Trends
-
----
-
-## 🖼️ Dashboard Preview
-
-![Consumer Retail Insights Dashboard](Consumer%20Retail%20Analysis%20Dashboard%20Image.png)
-
----
-
-## 🚀 Interactive Dashboard
-
-To explore the dashboard interactively:
-
-1. Download or clone this repository
-2. Open:
+How to Run
+1. Clone the repository
+```bash
+git clone <your-github-repository-url>
+cd customer-analytics-dashboard
+```
+2. Install Python libraries
+```bash
+pip install pandas numpy matplotlib sqlalchemy psycopg2-binary jupyter
+```
+3. Run the Python Notebook
+Open:
 ```text
-Consumer Retail Analysis Dashboard.pbix
+python/Customer_Analytics_Analysis.ipynb
 ```
-3. Launch using Microsoft Power BI Desktop
-4. Use slicers, filters, and visuals to interact with the dashboard dynamically
-
-### 📌 Interactive Features
-
-✔ Dynamic Filtering  
-✔ Cross-Chart Highlighting  
-✔ KPI Tracking  
-✔ Category-Level Drilldown  
-✔ Seasonal Trend Analysis  
-✔ Customer Segment Insights
----
-
-## How to Run This Project
-
-1. **Clone the repository:**
-```bash
-git clone https://github.com/AbhisekChandra-SenGupta1/Consumer-Retail-Analysis---SQL-Python-Power-BI.git
-cd Consumer-Retail-Analysis---SQL-Python-Power-BI
+Run the notebook cells sequentially to perform data preparation and analysis.
+4. Run the SQL Analysis
+Open:
+```text
+sql/Customer_Analytics_Queries.sql
 ```
-
-2. **Install required Python libraries:**
-```bash
-pip install pandas numpy matplotlib seaborn sqlalchemy psycopg2 jupyter
+Run the queries using your PostgreSQL environment.
+5. Open the Power BI Dashboard
+Open:
+```text
+powerbi/Customer_Analytics_Dashboard.pbix
 ```
-
-3. **Open the dataset:**
-   - The raw data is available in `Consumer_Retail_Analysis.xlsx`
-   - Load it in the notebook using `pandas.read_excel()`
-
-4. **Run the Jupyter Notebook:**
-   - Open `Consumer Retail Analysis notebook.ipynb` in Jupyter or VS Code
-   - Run all cells sequentially — the notebook covers data loading, cleaning, feature engineering, EDA, and SQL-based analysis
-
-5. **View the Power BI Dashboard:**
-   - Open `Consumer Retail Analysis Dashboard.pbix` in **Power BI Desktop**
-   - All visuals are pre-built and interactive — no additional setup needed
-
-6. **Read the full report:**
-   - Open `Consumer Retail Analysis Project Report.pdf` for a complete walkthrough of methodology, findings, and recommendations
-   - Refer to `Business Problem Document.pdf` for the original problem statement and objectives
-
+using Microsoft Power BI Desktop.
 ---
-
-## Final Recommendations
-
-- **Boost Subscription Conversion** – Target 2,518 loyal non-subscribers with exclusive discounts and early access offers to convert them into subscribers
-- **Leverage Male Customer Segment** – With 2× higher revenue, personalized campaigns and loyalty rewards for male demographics can maximize returns
-- **Capitalize on Young Adult Spending** – Young Adults contribute the highest total revenue ($62,143); prioritize digital-first, trend-driven campaigns for this segment
-- **Promote Express Shipping** – Express shipping correlates with higher order values ($60.48); limited-time express discounts could lift average order value across all segments
-- **Review Discount Policy** – High discount dependency on items like Hat (50%) and Sneakers (49.66%) risks margin erosion; shift toward tiered or loyalty-based discounts
-- **Seasonal Marketing Push** – Fall is the peak revenue season; pre-fall inventory scaling and email campaigns can maximize seasonal revenue capture
-- **Highlight Top-Rated Products** – Feature Gloves, Sandals, and Boots prominently in banners and category pages to improve conversion rates
-
+Recommendations
+Based on the dashboard analysis:
+Improve subscription conversion by targeting the large non-subscriber customer base.
+Prioritize strong categories, especially Clothing and Accessories, when planning inventory and promotions.
+Use seasonal trends to support marketing and inventory planning.
+Study customer segments to create more relevant offers for different types of buyers.
+Review shipping preferences when designing delivery-related promotions.
+Monitor customer ratings to understand product satisfaction alongside sales performance.
 ---
-
-## Author & Contact
-
-**Aditya Sharma**  
-B.Tech CSE Student | Siliguri Institute of Technology  
+Project Outcome
+The final dashboard provides a simple view of customer behavior and sales performance in one place.
+The project demonstrates a complete analytics workflow:
+Data → Python → SQL → Power BI → Business Insights
+It focuses on turning raw customer transaction data into information that can be understood and used for business decisions.
+---
+Skills Demonstrated
+Data Cleaning
+Exploratory Data Analysis
+SQL Analysis
+Data Visualization
+Power BI Dashboard Development
+Business Analysis
+Data Interpretation
+GitHub Project Documentation
+---
+👤 Author
+Aditya Sharma
+B.Tech CSE Student  
 Aspiring Data Analyst & Software Engineer
-
-📧 Email: adityasharma8417055@gmail.com  
-📞 Phone: +91-9134834935
-🔗 [LinkedIn](https://www.linkedin.com/in/abhisek-chandra-sen-gupta-573987289/)  
-🔗 [GitHub](https://github.com/AbhisekChandra-SenGupta1)
