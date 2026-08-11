@@ -278,11 +278,11 @@ pip install pandas numpy matplotlib seaborn sqlalchemy psycopg2 jupyter
 
 ## Author & Contact
 
-**Abhisek Chandra Sen Gupta**  
+**Aditya Sharma**  
 B.Tech CSE Student | Siliguri Institute of Technology  
 Aspiring Data Analyst & Software Engineer
 
-📧 Email: abhisekchandrasengupta@gmail.com  
-📞 Phone: +91-9382933694  
+📧 Email: adityasharma8417055@gmail.com  
+📞 Phone: +91-9134834935
 🔗 [LinkedIn](https://www.linkedin.com/in/abhisek-chandra-sen-gupta-573987289/)  
 🔗 [GitHub](https://github.com/AbhisekChandra-SenGupta1)
