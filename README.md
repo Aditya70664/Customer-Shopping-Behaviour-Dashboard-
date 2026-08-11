@@ -144,3 +144,15 @@ customer-analytics-dashboard/
 │
 └── dashboard/
     └── Customer_Analytics_Dashboard.png
+---
+
+## 👨‍💻 Author
+
+**Aditya Sharma**
+
+Data Analytics | SQL | Python | Power BI
+
+📧 **Email:** `adityasha233@gmail.com`
+
+---
+
